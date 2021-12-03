@@ -1,0 +1,47 @@
+
+
+header {
+    /*posicionamiento con respecto a la página*/
+position:relative;
+top:2vh;
+margin-bottom:2vh;
+
+    /*aspectos generales del header retirados*/
+    ol li::before {list-style-type: none;}
+
+    li {display:inline-block;}
+
+    a {text-decoration: none;}
+
+    /*posicionamiento general del header: flexbox*/
+    ol {
+        display:grid;
+        grid-template-columns: repeat(7, 1fr);
+        li{
+            a {
+                color:#fff;
+                padding:0.5rem 1.75rem;
+                border-radius:5rem;
+                background-color:$pink;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color:$pink;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+header {
+    ol {
+        grid-template-columns: repeat(4,1fr);
+        li {
+            margin-bottom:2rem;
+        }
+    }
+}
+
+}
